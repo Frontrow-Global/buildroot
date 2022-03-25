@@ -30,13 +30,11 @@ LIBPJSIP_CONF_ENV = \
 
 LIBPJSIP_CONF_OPTS = \
 	--disable-resample \
-	--disable-g7221-codec \
 	--disable-ilbc-codec \
 	--disable-libwebrtc \
 	--disable-ext-sound \
 	--disable-g711-codec \
 	--disable-l16-codec \
-	--disable-g722-codec \
 	--disable-ipp \
 	--disable-silk \
 	--with-external-srtp
@@ -162,6 +160,6 @@ LIBPJSIP_DEPENDENCIES += util-linux
 endif
 
 # disable build of test binaries
-LIBPJSIP_MAKE_OPTS = lib
+LIBPJSIP_MAKE_OPTS = all
 
 $(eval $(autotools-package))
