@@ -6,7 +6,7 @@
 
 LIBPJSIP_VERSION = 2.12
 LIBPJSIP_SOURCE = pjproject-$(LIBPJSIP_VERSION).tar.gz
-LIBPJSIP_SITE = $(call github,pjsip,pjproject,$(LIBPJSIP_VERSION))
+LIBPJSIP_SITE = $(call github,pjsip,Frontrow-Global,$(LIBPJSIP_VERSION))
 # https://github.com/pjsip/pjproject/archive/2.12.tar.gz
 
 LIBPJSIP_DEPENDENCIES = libsrtp
@@ -29,7 +29,6 @@ LIBPJSIP_CONF_ENV = \
 	CFLAGS="$(LIBPJSIP_CFLAGS)"
 
 LIBPJSIP_CONF_OPTS = \
-	--disable-resample \
 	--disable-ilbc-codec \
 	--disable-libwebrtc \
 	--disable-ext-sound \
