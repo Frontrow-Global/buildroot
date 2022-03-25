@@ -28,6 +28,7 @@ GNUTLS_CONF_OPTS = \
 	--enable-openssl-compatibility \
 	--with-librt-prefix=$(STAGING_DIR) \
 	--without-tpm \
+	--enable-pkcs11 \
 	$(if $(BR2_PACKAGE_GNUTLS_OPENSSL),--enable,--disable)-openssl-compatibility \
 	$(if $(BR2_PACKAGE_GNUTLS_TOOLS),--enable-tools,--disable-tools) \
 	$(if $(BR2_PACKAGE_GNUTLS_ENABLE_SSL2),--enable,--disable)-ssl2-support \
