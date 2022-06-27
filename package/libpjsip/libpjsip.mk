@@ -29,13 +29,7 @@ LIBPJSIP_CONF_ENV = \
 	CFLAGS="$(LIBPJSIP_CFLAGS)"
 
 LIBPJSIP_CONF_OPTS = \
-	--disable-ilbc-codec \
 	--disable-libwebrtc \
-	--disable-ext-sound \
-	--disable-g711-codec \
-	--disable-l16-codec \
-	--disable-ipp \
-	--disable-silk \
 	--with-external-srtp
 
 # Note: aconfigure.ac is broken: --enable-epoll or --disable-epoll will
@@ -53,15 +47,11 @@ endif
 ifeq ($(BR2_PACKAGE_BCG729),y)
 LIBPJSIP_DEPENDENCIES += bcg729
 LIBPJSIP_CONF_OPTS += --with-bcg729=$(STAGING_DIR)/usr
-else
-LIBPJSIP_CONF_OPTS += --disable-bcg729
 endif
 
 ifeq ($(BR2_PACKAGE_FFMPEG),y)
 LIBPJSIP_DEPENDENCIES += ffmpeg
 LIBPJSIP_CONF_OPTS += --with-ffmpeg=$(STAGING_DIR)/usr
-else
-LIBPJSIP_CONF_OPTS += --disable-ffmpeg
 endif
 
 ifeq ($(BR2_PACKAGE_LIBGSM),y)
@@ -69,16 +59,11 @@ LIBPJSIP_CONF_OPTS += \
 	--enable-gsm-codec \
 	--with-external-gsm
 LIBPJSIP_DEPENDENCIES += libgsm
-else
-LIBPJSIP_CONF_OPTS += \
-	--disable-gsm-codec
 endif
 
 ifeq ($(BR2_PACKAGE_LIBOPENH264),y)
 LIBPJSIP_DEPENDENCIES += libopenh264
 LIBPJSIP_CONF_OPTS += --with-openh264=$(STAGING_DIR)/usr
-else
-LIBPJSIP_CONF_OPTS += --disable-openh264
 endif
 
 ifeq ($(BR2_PACKAGE_LIBOPENSSL),y)
@@ -117,29 +102,21 @@ endif
 ifeq ($(BR2_PACKAGE_OPENCORE_AMR),y)
 LIBPJSIP_DEPENDENCIES += opencore-amr
 LIBPJSIP_CONF_OPTS += --with-opencore-amr=$(STAGING_DIR)/usr
-else
-LIBPJSIP_CONF_OPTS += --disable-opencore-amr
 endif
 
 ifeq ($(BR2_PACKAGE_OPUS),y)
 LIBPJSIP_DEPENDENCIES += opus
 LIBPJSIP_CONF_OPTS += --with-opus=$(STAGING_DIR)/usr
-else
-LIBPJSIP_CONF_OPTS += --disable-opus
 endif
 
 ifeq ($(BR2_PACKAGE_PORTAUDIO),y)
 LIBPJSIP_DEPENDENCIES += portaudio
 LIBPJSIP_CONF_OPTS += --with-external-pa
-else
-LIBPJSIP_CONF_OPTS += --without-external-pa
 endif
 
 ifeq ($(BR2_PACKAGE_SDL2),y)
 LIBPJSIP_DEPENDENCIES += sdl2
 LIBPJSIP_CONF_OPTS += --with-sdl=$(STAGING_DIR)/usr
-else
-LIBPJSIP_CONF_OPTS += --disable-sdl
 endif
 
 ifeq ($(BR2_PACKAGE_SPEEX)$(BR2_PACKAGE_SPEEXDSP),yy)
@@ -148,10 +125,6 @@ LIBPJSIP_CONF_OPTS += \
 	--enable-speex-codec \
 	--with-external-speex
 LIBPJSIP_DEPENDENCIES += speex speexdsp
-else
-LIBPJSIP_CONF_OPTS += \
-	--disable-speex-aec \
-	--disable-speex-codec
 endif
 
 ifeq ($(BR2_PACKAGE_UTIL_LINUX_LIBUUID),y)
@@ -159,6 +132,6 @@ LIBPJSIP_DEPENDENCIES += util-linux
 endif
 
 # disable build of test binaries
-LIBPJSIP_MAKE_OPTS = all
+LIBPJSIP_MAKE_OPTS = lib
 
 $(eval $(autotools-package))
