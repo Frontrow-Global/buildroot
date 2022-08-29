@@ -1,10 +1,10 @@
 [Unit]
 Description=PulseAudio Sound System
-After=syslog.target
+After=syslog.target network.target
 
 [Service]
 UMask=077
-ExecStart=/usr/bin/pulseaudio --system --daemonize=no
+ExecStart=/usr/bin/pulseaudio --system --daemonize=no --disallow-exit --disallow-module-loading
 Restart=always
 
 [Install]
