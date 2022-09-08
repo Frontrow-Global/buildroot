@@ -4,8 +4,8 @@
 #
 ################################################################################
 
-SWUPDATE_VERSION = 2023.12.1
-SWUPDATE_SITE = $(call github,sbabic,swupdate,$(SWUPDATE_VERSION))
+SWUPDATE_VERSION = 4711bf7efa8d917bacb93e3b2c7cb092301d5981
+SWUPDATE_SITE = $(call github,Frontrow-Global,swupdate,$(SWUPDATE_VERSION))
 SWUPDATE_LICENSE = GPL-2.0, GPL-2.0+, LGPL-2.1+, MIT, ISC, BSD-1-Clause, BSD-3-Clause, CC0-1.0, CC-BY-SA-4.0, OFL-1.1
 SWUPDATE_LICENSE_FILES = LICENSES/BSD-1-Clause.txt \
 	LICENSES/BSD-3-Clause.txt \
