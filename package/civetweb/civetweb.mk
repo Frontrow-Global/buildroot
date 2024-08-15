@@ -4,9 +4,8 @@
 #
 ################################################################################
 
-CIVETWEB_VERSION = 4245a37b436da23e1e148fd35513732169f80b11
-CIVETWEB_SITE = https://github.com/civetweb/civetweb
-CIVETWEB_SITE_METHOD = git
+CIVETWEB_VERSION = 1.16
+CIVETWEB_SITE = $(call github,civetweb,civetweb,v$(CIVETWEB_VERSION))
 CIVETWEB_LICENSE = MIT
 CIVETWEB_LICENSE_FILES = LICENSE.md
 CIVETWEB_CPE_ID_VALID = YES
